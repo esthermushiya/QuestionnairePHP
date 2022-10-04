@@ -3,10 +3,11 @@ if (!empty($_POST)) {
     extract($_POST);
     if (!empty($_POST['age'])) {
         $age = htmlspecialchars(trim($_POST['age']));
+        // die(var_dump($_POST));
         $valeur = "";
         if($age <= 18){
-            $valeur = "Cher(e) $nom $postnom veillez sur votre etucation d'abord";
-        }elseif($age >= 19){
+            $valeur = "Cher(e) $nom $prenom veillez sur votre etucation d'abord";
+        }elseif($age >= 19 && $age < 50){
             $valeur = " Mr,Mm Veillez sur votre stabilite vitaux";
         }elseif($age >= 50){
             $valeur = "Mr,Mme veillez rediger votre testament ";
@@ -22,7 +23,7 @@ if (!empty($_POST)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="Style/app.css">
 </head>
 <body>
 <form action="index.php" method="POST">
@@ -36,7 +37,7 @@ if (!empty($_POST)) {
         <label for="age">Age : </label>
         <input type="number" id="age" name="age">
         <label for="mail">Email : </label>
-        <input type="email" id="mail" name="age">
+        <input type="email" id="mail" name="mail">
     </div>
 </div>
     
